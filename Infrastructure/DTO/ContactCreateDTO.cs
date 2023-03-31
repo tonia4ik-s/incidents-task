@@ -2,6 +2,7 @@
 
 public class ContactCreateDTO
 {
+    public ContactCreateDTO() { }
     public ContactCreateDTO(string email, string firstName, string lastName)
     {
         Email = email;
