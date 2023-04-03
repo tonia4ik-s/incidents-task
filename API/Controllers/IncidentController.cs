@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Infrastructure.DTO;
-using Infrastructure.Interfaces;
+using Core.DTO;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -13,6 +13,13 @@ public class IncidentController : Controller
     public IncidentController(IIncidentService service)
     {
         _service = service;
+    }
+    
+    [HttpGet]
+    public async Task<ActionResult> GetAll()
+    {
+        var incidents = await _service.GetAll();
+        return Ok(incidents);
     }
 
     [HttpPost]

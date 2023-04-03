@@ -1,9 +1,9 @@
-﻿namespace Infrastructure.DTO;
+﻿namespace Core.DTO;
 
-public class ContactCreateDTO
+public class ContactDTO
 {
-    public ContactCreateDTO() { }
-    public ContactCreateDTO(string email, string firstName, string lastName)
+    public ContactDTO() { }
+    public ContactDTO(string email, string firstName, string lastName)
     {
         Email = email;
         FirstName = firstName;

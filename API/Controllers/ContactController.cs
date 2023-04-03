@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Infrastructure.DTO;
-using Infrastructure.Interfaces;
+using Core.DTO;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -16,8 +16,15 @@ public class ContactController : Controller
         _service = service;
     }
 
+    [HttpGet]
+    public async Task<ActionResult> GetAll()
+    {
+        var contacts = await _service.GetContactsAsync();
+        return Ok(contacts);
+    }
+    
     [HttpPost]
-    public async Task<ActionResult> CreateAsync([FromQuery]ContactCreateDTO contactDTO)
+    public async Task<ActionResult> CreateAsync([FromQuery]ContactDTO contactDTO)
     {
         try
         {

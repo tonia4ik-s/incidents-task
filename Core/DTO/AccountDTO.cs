@@ -1,6 +1,6 @@
-﻿namespace Infrastructure.DTO;
+﻿namespace Core.DTO;
 
-public class AccountCreateDTO
+public class AccountDTO
 {
     public string AccountName { get; set; }
     public string Email { get; set; }

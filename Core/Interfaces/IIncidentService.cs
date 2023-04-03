@@ -1,8 +1,9 @@
-﻿using Infrastructure.DTO;
+﻿using Core.DTO;
 
-namespace Infrastructure.Interfaces;
+namespace Core.Interfaces;
 
 public interface IIncidentService
 {
+    Task<IList<IncidentDTO>> GetAll();
     public Task CreateAsync(IncidentCreateDTO incidentDTO);
 }

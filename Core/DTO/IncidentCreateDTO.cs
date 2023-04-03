@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.DTO;
+﻿namespace Core.DTO;
 
 public class IncidentCreateDTO
 {

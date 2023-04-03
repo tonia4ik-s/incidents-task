@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Infrastructure.DTO;
-using Infrastructure.Interfaces;
+using Core.DTO;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -15,8 +15,15 @@ public class AccountController : Controller
         _service = service;
     }
 
+    [HttpGet]
+    public async Task<ActionResult> GetAll()
+    {
+        var accounts = await _service.GetAllAsync();
+        return Ok(accounts);
+    }
+    
     [HttpPost]
-    public async Task<ActionResult> CreateAsync(AccountCreateDTO accountDTO)
+    public async Task<ActionResult> CreateAsync(AccountDTO accountDTO)
     {
         try
         {
